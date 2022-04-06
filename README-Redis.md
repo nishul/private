@@ -37,7 +37,7 @@ The Script.py script is created in Python to accomplish the following task by co
 
 * Python 3.7 and above. Latest version can be dowloaded from https://www.python.org/downloads/.
 * Python client for Redis database and key-value store. You can refer the below link to install the latest redis package using PIP:
-   * https://pypi.org/project/redis/
+  https://pypi.org/project/redis/
 
 
 ## HOW TO USE
@@ -48,11 +48,11 @@ The Script.py script is created in Python to accomplish the following task by co
 * Run script.py using the below command:
    * python3 script.py
 * script.py script will perform the below action:
-   * Calling "insert_values_source_db()" function to perform below actions:
+   * Invoking "insert_values_source_db()" function to perform below actions:
    * Validating the connection with Source-db endpoint.
    * Checking if "values" key already exists or not, if yes then deleting the "values" key to reinitiate the "values" key.
    * Inserting the values 1-100 in "values" key.
-   * Calling the "reverse_values_repica_db()" function to retrive the values from "values" key in reverse order.
+   * Invoking the "reverse_values_repica_db()" function to retrive the values from "values" key in reverse order.
    * "reverse_values_repica_db()" will validate the connection with replica-db endpoint and also validate if "values" key present in replica-db or not. 
       If not, then check whether replication is working as expected or not.
    * "reverse_values_repica_db()" will print all the values in "values" key in reverse order.
