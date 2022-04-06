@@ -35,7 +35,8 @@ The Script.py script is created in Python to accomplish the following task by co
    Refer the below link to know more about creating Single Sharded Redis Enterprise Databases.
    https://docs.redis.com/latest/rs/administering/creating-databases/
 
-* Python 3.7 and above. Latest version can be dowloaded from https://www.python.org/downloads/.
+* Python 3.7 and above. Latest version can be dowloaded from the below link:
+  https://www.python.org/downloads/
 * Python client for Redis database and key-value store. You can refer the below link to install the latest redis package using PIP:
   https://pypi.org/project/redis/
 
