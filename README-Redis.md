@@ -9,7 +9,7 @@
 ---------------
 Customer: Redis (Michael Ehrig)
 
-There are 2 Single Sharded Redis Enterprise Databases(source-db & replica-db) and replica-db is configured as replica of source-db. You can refer the below article to learn more about the Redis replication:
+There are 2 Single Sharded Redis Enterprise Databases(source-db & replica-db) and replica-db is configured as replica of source-db. You can refer the following article to learn more about the Redis replication:
 https://redis.io/docs/manual/replication/
 
 Redis scales horizontally with a deployment topology called Redis Cluster. There are 3 Redis Enterprise nodes with a cluster already configured between them: re-n1, re-n2, re-n3. Load node is also configured to load data on "source-db" database using to "memtier_benchmark". 
@@ -34,12 +34,12 @@ The Script.py script is created in Python to accomplish the following task by co
    *  Another single sharded Redis Enterprise database named "replica-db" with password as "nopassword", and a memory limit of 2GB. 
       * Enable "Replica Of" in Advance options and use "source-db" as the source database to make "replica-db" database a repository for keys from "source-db" database.
 
-   Refer the below link to know more about creating Single Sharded Redis Enterprise Databases.
+   Refer the following link to know more about creating Single Sharded Redis Enterprise Databases.
    https://docs.redis.com/latest/rs/administering/creating-databases/
 
-* Python 3.7 and above. Latest version can be dowloaded from the below link:
+* Python 3.7 and above. Latest version can be dowloaded from the this link:
   https://www.python.org/downloads/
-* Python client for Redis database and key-value store. You can refer the below link to install the latest redis package using PIP:
+* Python client for Redis database and key-value store. You can refer the following link to install the latest redis package using PIP:
   https://pypi.org/project/redis/
 
 
@@ -52,13 +52,13 @@ The Script.py script is created in Python to accomplish the following task by co
    * python3 script.py
 * script.py script will perform the below action:
    * Invoking "insert_values_source_db()" function to perform below actions:
-   * Validating the connection with Source-db endpoint.
-   * Checking if "values" key already exists or not, if yes then deleting the "values" key to reinitiate the "values" key.
-   * Inserting the values 1-100 in "values" key.
-   * Invoking the "reverse_values_repica_db()" function to retrive the values from "values" key in reverse order.
-   * "reverse_values_repica_db()" will validate the connection with replica-db endpoint and also validate if "values" key present in replica-db or not. 
-      If not, then check whether replication is working as expected or not.
-   * "reverse_values_repica_db()" will print all the values in "values" key in reverse order.
+      * Validating the connection with Source-db endpoint.
+      * Checking if "values" key already exists or not, if yes then deleting the "values" key to reinitiate the "values" key.
+      * Inserting the values 1-100 in "values" key.
+      * Invoking the "reverse_values_repica_db()" function to retrive the values from "values" key in reverse order.
+      * "reverse_values_repica_db()" will validate the connection with replica-db endpoint and also validate if "values" key present in replica-db or not. 
+         If not, then check whether replication is working as expected or not.
+      * "reverse_values_repica_db()" will print all the values in "values" key in reverse order.
 
 
 ## TROUBLESHOOTING
