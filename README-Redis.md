@@ -1,10 +1,10 @@
 ## CONTENTS
 ------------------------
- ## Introduction
- ## prerequisite
- ## How to use
- ## ARCHITECTURAL OVERVIEW
- ## Troubleshooting 
+ * Introduction
+ * prerequisite
+ * How to use
+ * ARCHITECTURAL OVERVIEW
+ * Troubleshooting 
 
 ## INTRODUCTION
 ---------------
