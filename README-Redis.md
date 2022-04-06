@@ -9,8 +9,10 @@
 ---------------
 Customer: Redis (Michael Ehrig)
 
-There are 2 Single Sharded Redis Enterprise Databases(source-db & replica-db) and replica-db is configured as replica of source-db. 
-There are 3 Redis Enterprise nodes with a cluster already configured between them: re-n1, re-n2, re-n3. Load node is also configured to load data on "source-db" database using to "memtier_benchmark". 
+There are 2 Single Sharded Redis Enterprise Databases(source-db & replica-db) and replica-db is configured as replica of source-db. You can refer the below article to learn more about the Redis replication:
+https://redis.io/docs/manual/replication/
+
+Redis scales horizontally with a deployment topology called Redis Cluster. There are 3 Redis Enterprise nodes with a cluster already configured between them: re-n1, re-n2, re-n3. Load node is also configured to load data on "source-db" database using to "memtier_benchmark". 
 The "/tmp/memtier_benchmark.txt" file is created in Load node that contains commands used to load the data in "source-db".
 
 
