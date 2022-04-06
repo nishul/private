@@ -3,14 +3,18 @@
  * Introduction
  * prerequisite
  * How to use
- * ARCHITECTURAL OVERVIEW
  * Troubleshooting 
 
 ## INTRODUCTION
 ---------------
 Customer: Redis (Michael Ehrig)
 
-The Script.py scrip is created in Python to accomplish the following task by connecting with single sharded Redis Enterprise databases:
+There are 2 Single Sharded Redis Enterprise Databases(source-db & replica-db) and replica-db is configured as replica of source-db. 
+There are 3 Redis Enterprise nodes with a cluster already configured between them: re-n1, re-n2, re-n3. Load node is also configured to load data on "source-db" database using to "memtier_benchmark". 
+The "/tmp/memtier_benchmark.txt" file is created in Load node that contains commands used to load the data in "source-db".
+
+
+The Script.py script is created in Python to accomplish the following task by connecting with single sharded Redis Enterprise databases:
 
 * Insert the values 1-100 into the Redis OSS database on source-db. Possible outcomes:
    * The connection is established with source-db endpoint on "redis-13090.re-cluster1.ps-redislabs.org:13090".
@@ -24,8 +28,8 @@ The Script.py scrip is created in Python to accomplish the following task by con
 ## PREREQUISITE
 ---------------
 * 2 Single Sharded Redis Enterprise Databases:
-   *  A single sharded Redis Enterprise database named "source-db" with no password, and a memory limit of 2GB. 
-   *  Another single sharded Redis Enterprise database named "replica-db" with no password, and a memory limit of 2GB. 
+   *  A single sharded Redis Enterprise database named "source-db" with password as "nopassword", and a memory limit of 2GB. 
+   *  Another single sharded Redis Enterprise database named "replica-db" with password as "nopassword", and a memory limit of 2GB. 
       * Enable "Replica Of" in Advance options and use "source-db" as the source database to make "replica-db" database a repository for keys from "source-db" database.
 
    Refer the below link to know more about creating Single Sharded Redis Enterprise Databases.
@@ -54,22 +58,9 @@ The Script.py scrip is created in Python to accomplish the following task by con
    * "reverse_values_repica_db()" will print all the values in "values" key in reverse order.
 
 
-## ARCHITECTURAL OVERVIEW
--------------------------
-*Provide a high level overview of the architecture.*
-
-Examples:\
-This scripted netscan is written in Groovy and obtains X data using ABC to scan for switches and routers in the customer's environment.
-
-Or:
-
-This script is written in Python and resides on the ABC collector. It is run when XYZ occurs. It communicates DEF to the GHI via JKL data consisting of MNO. 
-
-
 ## TROUBLESHOOTING
 ------------------
-/usr/bin/python3 /home/coder/script.py
-*Outline known or common problems that might be encountered along with solutions (links are okay if they point to LogicMonitor Support documents or if the steps are long, but it is helpful to provide a summary since links sometimes go stale).*
+* Connection issue with source-db or replica-db:
+   * Validate the endpoint's url, port and password.
+   * Validate the endpoints are reachable from your IDE environment.
 
-Examples:
-This DataSource depends on SNMP access. If no data is being returned, please follow [these steps for LogicMonitor SNMP troubleshooting](https://www.logicmonitor.com/support/monitoring/os-virtualization/troubleshooting-snmp).
